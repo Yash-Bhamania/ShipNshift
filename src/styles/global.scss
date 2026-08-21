@@ -1,0 +1,31 @@
+@use "./variables.scss" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: $text-primary;
+  background-color: $background-color;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font: inherit;
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: $container-width;
+  padding: 0 $container-padding;
+}

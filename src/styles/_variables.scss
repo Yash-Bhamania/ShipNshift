@@ -1,0 +1,90 @@
+// =========================================================================
+// Colors variables
+// =========================================================================
+// Brand Colors
+
+$primary-color: #0f172a;
+$accent-color: #ff6b35;
+
+// Neutral Colors
+
+$white: #ffffff;
+$black: #000000;
+
+// Text Colors
+
+$text-primary: #1f2937;
+$text-secondary: #6b7280;
+
+// Background Colors
+
+$background-color: #ffffff;
+$surface-color: #f8fafc;
+
+// Border Colors
+
+$border-color: #e5e7eb;
+
+// Status Colors
+
+$success-color: #16a34a;
+$warning-color: #f59e0b;
+$error-color: #dc2626;
+
+
+// ===================================
+// Layout
+// ===================================
+
+$container-width: 1320px;
+$container-padding: 20px;
+
+$section-padding-y: 100px;
+$section-padding-y-tablet: 80px;
+$section-padding-y-mobile: 60px;
+
+$header-height: 80px;
+
+
+
+
+
+// ===================================
+// Border Radius
+// ===================================
+
+$radius-sm: 6px;
+$radius-md: 12px;
+$radius-lg: 16px;
+$radius-full: 9999px;
+
+
+
+// ===================================
+// Shadows    
+// ===================================
+
+$shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.08);
+$shadow-md: 0 8px 20px rgba(15, 23, 42, 0.12);
+$shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.16);
+
+
+
+// ===================================
+// Transitions
+// ===================================
+
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// ===================================
+// Z-Index
+// ===================================
+
+$z-content: 1;
+$z-header: 100;
+$z-mobile-nav: 200;
+$z-modal: 300;
+$z-toast: 400;
+

@@ -1,0 +1,168 @@
+@use "../../styles/variables.scss" as *;
+@use "../../styles/mixins.scss" as *;
+
+.hero {
+  // =========================
+  // BASE STYLES
+  // =========================
+
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(15, 23, 42, 0.95) 0%,
+      rgba(15, 23, 42, 0.75) 30%,
+      rgba(15, 23, 42, 0.2) 60%,
+      transparent 80%
+    ),
+    url("../../assets/images/hero/hero-bg.png") no-repeat center center;
+
+  background-size: cover;
+
+  .hero-content {
+    color: $white;
+    max-width: 680px;
+
+    .hero-eyebrow {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+
+    h1 {
+      font-size: 4rem;
+      line-height: 1.1;
+      border-left: 4px solid $accent-color;
+      padding-left: 1.5rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+
+      span {
+        color: $accent-color;
+        font-weight: 700;
+      }
+    }
+
+    p {
+      font-size: 1.125rem;
+      margin-top: 1rem;
+      line-height: 1.6;
+      max-width: 600px;
+    }
+
+    .hero-action {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+
+      button {
+        padding: 0.6rem 1.2rem;
+        font-size: 1.1rem;
+        border-radius: $radius-sm;
+        border: none;
+        cursor: pointer;
+      }
+
+      a {
+        border-radius: $radius-sm;
+        text-decoration: none;
+        color: $white;
+        border: 1px solid $white;
+        padding: 0.6rem 1.2rem;
+      }
+    }
+  }
+
+  // =========================
+  // TABLET
+  // =========================
+
+  @include tablet {
+    .hero-content {
+      max-width: 600px;
+
+      .hero-eyebrow {
+        font-size: 0.9rem;
+      }
+
+      h1 {
+        font-size: 3rem;
+        padding-left: 1rem;
+        border-left-width: 3px;
+      }
+
+      p {
+        font-size: 1rem;
+        max-width: 500px;
+      }
+
+      .hero-action {
+        gap: 1rem;
+      }
+    }
+  }
+
+  // =========================
+  // MOBILE
+  // =========================
+
+  @include mobile {
+    height: calc(100vh - 64px);
+
+    background-position: 80% center;
+
+    .container {
+      height: 100%;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .hero-content {
+      padding-top: 3.5rem;
+      width: 100%;
+      max-width: 100%;
+
+      .hero-eyebrow {
+        font-size: 0.75rem;
+        letter-spacing: 0.06em;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+        line-height: 1.08;
+        padding-left: 0.75rem;
+        margin-top: 1rem;
+        margin-bottom: 2.25rem;
+      }
+      span {
+        font-weight: 700;
+      }
+
+      p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        max-width: 320px;
+        margin-top: 0;
+      }
+
+      .hero-action {
+        margin-top: 3.5rem;
+        width: 100%;
+        max-width: 320px;
+        gap: 0.75rem;
+
+        button,
+        a {
+          padding: 0.5rem 1rem;
+          font-size: 0.95rem;
+        }
+      }
+    }
+  }
+}

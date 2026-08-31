@@ -1,16 +1,8 @@
-import React from 'react'
-import Home from './pages/home'
-import Header from './components/Header'
-import Footer from './components/Footer'
+import { RouterProvider } from 'react-router'
+import router from './router'
 
 const App = () => {
-  return (
-    <div>
-      <Header/>
-      <Home/>
-      <Footer/>
-    </div>
-  )
+  return <RouterProvider router={router} />
 }
 
 export default App

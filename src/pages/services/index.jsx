@@ -1,9 +1,28 @@
-import React from 'react'
+import React from "react";
+import ServicesHero from "../../components/ServicesHero";
+
+import services from "../../constants/services";
+import ServiceDetail from "../../components/ServicesDetail";
+import CTA from '../../components/CTA'
 
 const Services = () => {
   return (
-    <div>Services</div>
-  )
-}
+    <>
+      <ServicesHero />
 
-export default Services
+      {services.map((service) => (
+        <ServiceDetail
+          key={service.name}
+          name={service.name}
+          description={service.description}
+          features={service.features}
+          image={service.image}
+          imagePosition={service.imagePosition}
+        />
+      ))}
+      <CTA/>
+    </>
+  );
+};
+
+export default Services;

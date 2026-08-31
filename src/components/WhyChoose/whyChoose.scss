@@ -1,0 +1,123 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.why-choose-section {
+  padding: $section-padding-y 0;
+  background-color: $surface-color;
+
+  // =========================
+  // SECTION HEADER
+  // =========================
+
+  .why-choose-header {
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+
+    .section-eyebrow {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: $accent-color;
+    }
+
+    h2 {
+      margin: 1rem 0;
+      font-size: 2.5rem;
+      line-height: 1.2;
+      color: $text-primary;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: $text-secondary;
+    }
+  }
+
+  // =========================
+  // WHY CHOOSE GRID
+  // =========================
+
+  .why-choose-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 4rem auto 0;
+  }
+
+  // =========================
+  // REASON ITEM
+  // =========================
+
+  .why-choose-item {
+    padding: 2rem;
+    background-color: $white;
+    border: 1px solid $border-color;
+    border-radius: $radius-md;
+
+    svg {
+      margin-bottom: 1rem;
+      color: $accent-color;
+    }
+
+    h3 {
+      margin: 0 0 0.75rem;
+      font-size: 1.25rem;
+      color: $text-primary;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: $text-secondary;
+    }
+  }
+
+  // =========================
+  // TABLET
+  // =========================
+
+  @include tablet {
+    .why-choose-grid {
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+
+    .why-choose-item {
+      padding: 1.75rem;
+    }
+  }
+
+  // =========================
+  // MOBILE
+  // =========================
+
+  @include mobile {
+    .why-choose-header {
+      max-width: 100%;
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .why-choose-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .why-choose-item {
+      padding: 1.5rem;
+    }
+  }
+}

@@ -1,0 +1,103 @@
+@use "../../styles/variables.scss" as *;
+@use "../../styles/mixins.scss" as *;
+
+.trust-section {
+  padding: $section-padding-y 0;
+  background-color: $background-color;
+
+  .trust-header {
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+
+    .section-eyebrow {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: $accent-color;
+    }
+
+    h2 {
+      margin: 1rem 0;
+      font-size: 2.5rem;
+      line-height: 1.2;
+      color: $text-primary;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: $text-secondary;
+    }
+  }
+
+  .trust-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+
+    .trust-feature {
+      padding: 2rem;
+      background-color: $white;
+      border: 1px solid $border-color;
+      border-radius: $radius-md;
+
+      h3 {
+        margin: 0 0 0.75rem;
+        font-size: 1.25rem;
+        color: $text-primary;
+      }
+
+      p {
+        margin: 0;
+        color: $text-secondary;
+        line-height: 1.6;
+      }
+    }
+  }
+//========================= tablet css ========================`
+  @include tablet {
+    .trust-header {
+      max-width: 650px;
+      h2 {
+        font-size: 2.2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+    .trust-features {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+  }
+
+// ==================== mobile css ========================
+
+
+  @include mobile {
+    .trust-header{
+      h2{
+        font-size: 1.8rem;
+
+      }
+      p{
+        font-size: .95rem;
+      }
+
+    }
+    .trust-features{
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+
+      .trust-feature{
+        padding: 1.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.process-section {
+  padding: $section-padding-y 0;
+  background-color: $background-color;
+  .process-header {
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+    .section-eyebrow {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: $accent-color;
+    }
+    h2 {
+      margin: 1rem 0;
+      font-size: 2.5rem;
+      line-height: 1.2;
+      color: $text-primary;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: $text-secondary;
+    }
+  }
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .process-step {
+    position: relative;
+    padding: 2rem;
+    text-align: center;
+    // border: 1px solid $border-color;
+
+    .step-number {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: $accent-color;
+    }
+    .step-icon {
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+
+      color: $accent-color;
+      background-color: rgba(255, 107, 53, 0.1);
+      border-radius: $radius-md;
+    }
+    h3 {
+      margin: 0 0 0.75rem;
+      font-size: 1.3rem;
+      color: $text-primary;
+    }
+
+    p {
+      max-width: 300px;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: $text-secondary;
+    }
+  }
+  @include mobile {
+    .process-header {
+      max-width: 100%;
+      .section-eyebrow{
+        font-size: .8rem;
+
+      }
+      h2{
+        font-size: 2rem;
+
+      }
+      p{
+        font-size: .95rem;
+        line-height: 1.6;
+      }
+
+    }
+    .process-steps{
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+
+    }
+    .process-step{
+      padding: 0 1rem;
+      .step-number{
+        margin-bottom: .75rem;
+      }
+      .step-icon{
+        width: 56px;
+        height: 56px;
+        margin-bottom: 1rem;
+      }
+      h3{
+        font-size: 1.2rem;
+
+      }
+      p{
+        max-width: 300px;
+        font-size: .95rem;
+        
+      }
+    }
+  }
+}

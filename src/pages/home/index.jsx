@@ -4,6 +4,7 @@ import TrustSection from '../../components/TrustSection'
 import Services from '../../components/Services'
 import Process from '../../components/Process'
 import WhyChoose from '../../components/WhyChoose'
+import CTA from '../../components/CTA'
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Services/>
       <Process/>
       <WhyChoose/>
+      <CTA/>
     </div>
   )
 }

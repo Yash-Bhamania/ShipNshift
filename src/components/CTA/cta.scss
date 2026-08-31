@@ -1,0 +1,94 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.cta-section {
+  padding: 5rem 0;
+  background-color: $primary-color;
+
+  .cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: $white;
+
+    .section-eyebrow {
+      display: block;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: $accent-color;
+    }
+
+    h2 {
+      margin: 0 0 1rem;
+      font-size: 2.8rem;
+      line-height: 1.2;
+      color: $white;
+    }
+
+    p {
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    button {
+      margin-top: 2rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: $primary-color;
+      background-color: $white;
+      border: none;
+      border-radius: $radius-sm;
+      cursor: pointer;
+    }
+  }
+
+  // =========================
+  // TABLET
+  // =========================
+
+  @include tablet {
+    .cta-content {
+      max-width: 650px;
+
+      h2 {
+        font-size: 2.4rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  // =========================
+  // MOBILE
+  // =========================
+
+  @include mobile {
+    padding: 4rem 0;
+
+    .cta-content {
+      max-width: 100%;
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      button {
+        width: 100%;
+        max-width: 220px;
+      }
+    }
+  }
+}

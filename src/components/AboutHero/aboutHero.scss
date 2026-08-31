@@ -1,0 +1,105 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.about-hero {
+  min-height: 55vh;
+  display: flex;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(15, 23, 42, 0.95) 0%,
+      rgba(15, 23, 42, 0.8) 35%,
+      rgba(15, 23, 42, 0.35) 65%,
+      transparent 100%
+    ),
+    url("../../assets/images/hero/hero-bg.png") no-repeat center center;
+
+  background-size: cover;
+
+  .about-hero-content {
+    max-width: 700px;
+    color: $white;
+
+    .section-eyebrow {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: $accent-color;
+    }
+
+    h1 {
+      margin: 1.25rem 0;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      border-left: 4px solid $accent-color;
+      padding-left: 1.5rem;
+      color: $white;
+    }
+
+    p {
+      max-width: 600px;
+      margin: 0;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.85);
+    }
+  }
+
+  // =========================
+  // TABLET
+  // =========================
+
+  @include tablet {
+    min-height: 50vh;
+
+    .about-hero-content {
+      max-width: 600px;
+
+      h1 {
+        font-size: 3rem;
+        padding-left: 1rem;
+        border-left-width: 3px;
+      }
+
+      p {
+        font-size: 1rem;
+        max-width: 500px;
+      }
+    }
+  }
+
+  // =========================
+  // MOBILE
+  // =========================
+
+  @include mobile {
+    min-height: calc(70vh - 64px);
+
+    background-position: 75% center;
+
+    .about-hero-content {
+      max-width: 100%;
+
+      .section-eyebrow {
+        font-size: 0.75rem;
+        letter-spacing: 0.06em;
+      }
+
+      h1 {
+        margin: 1rem 0 1.5rem;
+        padding-left: 0.75rem;
+        font-size: 2.2rem;
+        line-height: 1.08;
+      }
+
+      p {
+        max-width: 320px;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+    }
+  }
+}

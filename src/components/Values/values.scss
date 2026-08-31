@@ -1,0 +1,164 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.values-section {
+  padding: $section-padding-y 0;
+  background-color: $background-color;
+
+  // =========================
+  // SECTION HEADER
+  // =========================
+
+  .values-header {
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+
+    .section-eyebrow {
+      display: block;
+      margin-bottom: 1rem;
+
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: $accent-color;
+    }
+
+    h2 {
+      margin: 0 0 1rem;
+
+      font-size: 2.5rem;
+      line-height: 1.2;
+      color: $text-primary;
+    }
+
+    p {
+      margin: 0;
+
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: $text-secondary;
+    }
+  }
+
+  // =========================
+  // VALUES GRID
+  // =========================
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    max-width: 1000px;
+    margin: 4rem auto 0;
+  }
+
+  // =========================
+  // VALUE ITEM
+  // =========================
+
+  .value-item {
+    padding: 2rem;
+
+    background-color: $white;
+    border: 1px solid $border-color;
+    border-radius: $radius-md;
+
+    text-align: center;
+
+    .value-icon {
+      width: 64px;
+      height: 64px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin: 0 auto 1.5rem;
+
+      color: $accent-color;
+      background-color: rgba(255, 107, 53, 0.1);
+      border-radius: $radius-md;
+    }
+
+    h3 {
+      margin: 0 0 0.75rem;
+
+      font-size: 1.25rem;
+      color: $text-primary;
+    }
+
+    p {
+      max-width: 280px;
+      margin: 0 auto;
+
+      font-size: 1rem;
+      line-height: 1.6;
+      color: $text-secondary;
+    }
+  }
+
+  // =========================
+  // TABLET
+  // =========================
+
+  @include tablet {
+    .values-grid {
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .value-item {
+      padding: 1.75rem;
+    }
+  }
+
+  // =========================
+  // MOBILE
+  // =========================
+
+  @include mobile {
+    .values-header {
+      max-width: 100%;
+
+      .section-eyebrow {
+        margin-bottom: 0.75rem;
+        font-size: 0.8rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+    }
+
+    .values-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .value-item {
+      padding: 1.5rem;
+
+      .value-icon {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 1.25rem;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
+  }
+}

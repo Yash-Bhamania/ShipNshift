@@ -1,0 +1,131 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.who-we-are {
+  padding: $section-padding-y 0;
+  background-color: $background-color;
+
+  .who-we-are-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  // =========================
+  // IMAGE
+  // =========================
+
+  .who-we-are-image {
+    width: 100%;
+    overflow: hidden;
+    border-radius: $radius-md;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+  }
+
+  // =========================
+  // CONTENT
+  // =========================
+
+  .who-we-are-text {
+    max-width: 560px;
+
+    .section-eyebrow {
+      display: block;
+      margin-bottom: 1rem;
+
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: $accent-color;
+    }
+
+    h2 {
+      margin: 0 0 1.25rem;
+
+      font-size: 2.5rem;
+      line-height: 1.2;
+      color: $text-primary;
+    }
+
+    p {
+      margin: 0 0 1rem;
+
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: $text-secondary;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // =========================
+  // TABLET
+  // =========================
+
+  @include tablet {
+    .who-we-are-content {
+      gap: 2.5rem;
+    }
+
+    .who-we-are-image {
+      img {
+        height: 420px;
+      }
+    }
+
+    .who-we-are-text {
+      h2 {
+        font-size: 2.2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  // =========================
+  // MOBILE
+  // =========================
+
+  @include mobile {
+    .who-we-are-content {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .who-we-are-image {
+      img {
+        height: 280px;
+      }
+    }
+
+    .who-we-are-text {
+      max-width: 100%;
+
+      .section-eyebrow {
+        margin-bottom: 0.75rem;
+        font-size: 0.8rem;
+      }
+
+      h2 {
+        margin-bottom: 1rem;
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.mission-section {
+  padding: $section-padding-y 0;
+  background-color: $surface-color;
+
+  .mission-content {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+
+    .section-eyebrow {
+      display: block;
+      margin-bottom: 1rem;
+
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: $accent-color;
+    }
+
+    h2 {
+      max-width: 750px;
+      margin: 0 auto 1.25rem;
+
+      font-size: 2.5rem;
+      line-height: 1.2;
+      color: $text-primary;
+    }
+
+    p {
+      max-width: 680px;
+      margin: 0 auto;
+
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: $text-secondary;
+    }
+  }
+
+  // =========================
+  // TABLET
+  // =========================
+
+  @include tablet {
+    .mission-content {
+      max-width: 700px;
+
+      h2 {
+        font-size: 2.2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  // =========================
+  // MOBILE
+  // =========================
+
+  @include mobile {
+    .mission-content {
+      max-width: 100%;
+
+      .section-eyebrow {
+        margin-bottom: 0.75rem;
+        font-size: 0.8rem;
+      }
+
+      h2 {
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        line-height: 1.15;
+      }
+
+      p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+    }
+  }
+}

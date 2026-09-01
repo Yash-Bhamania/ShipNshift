@@ -1,0 +1,103 @@
+@use "../../styles/variables.scss" as *;
+@use "../../styles/mixins.scss" as *;
+
+.not-found {
+  min-height: calc(100vh - $header-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: $section-padding-y 0;
+  background-color: $surface-color;
+
+  .not-found-content {
+    max-width: 650px;
+    margin: 0 auto;
+
+    text-align: center;
+
+    .section-eyebrow {
+      display: block;
+      margin-bottom: 1rem;
+
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+
+      color: $accent-color;
+    }
+
+    h1 {
+      margin: 0 0 1rem;
+
+      font-size: 4rem;
+      line-height: 1.1;
+
+      color: $text-primary;
+    }
+
+    p {
+      max-width: 500px;
+      margin: 0 auto 2rem;
+
+      font-size: 1.05rem;
+      line-height: 1.7;
+
+      color: $text-secondary;
+    }
+
+    a {
+      display: inline-block;
+
+      padding: 0.85rem 1.5rem;
+
+      font-size: 0.95rem;
+      font-weight: 600;
+
+      color: $white;
+      background-color: $primary-color;
+
+      border-radius: $radius-sm;
+      text-decoration: none;
+
+      transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        opacity: 0.9;
+      }
+    }
+  }
+
+  // =========================
+  // MOBILE
+  // =========================
+
+  @include mobile {
+    min-height: calc(100vh - 64px);
+
+    padding: 4rem $container-padding;
+
+    .not-found-content {
+      .section-eyebrow {
+        font-size: 0.8rem;
+      }
+
+      h1 {
+        font-size: 2.75rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      a {
+        width: 100%;
+        max-width: 220px;
+      }
+    }
+  }
+}

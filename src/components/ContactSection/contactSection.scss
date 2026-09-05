@@ -113,6 +113,24 @@
     background-color: $white;
     border: 1px solid $border-color;
     border-radius: $radius-md;
+    .form-success {
+  padding: 2rem 0;
+
+  h3 {
+    margin: 0 0 0.75rem;
+
+    font-size: 1.5rem;
+    color: $text-primary;
+  }
+
+  p {
+    margin: 0;
+
+    font-size: 1rem;
+    line-height: 1.6;
+    color: $text-secondary;
+  }
+}
   }
 
   .contact-form-wrapper > .section-eyebrow {
@@ -152,6 +170,11 @@
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
+      .form-error {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        color: $accent-color;
+      }
     }
 
     label {

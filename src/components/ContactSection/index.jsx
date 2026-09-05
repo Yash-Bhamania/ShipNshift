@@ -1,12 +1,31 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import "./contactSection.scss";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import contactSchema from "../../schemas/contactSchema";
+import { useState } from "react";
 
 const ContactSection = () => {
+  const [isSubmited, setIsSubmited] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm({
+    resolver: zodResolver(contactSchema),
+  });
+
+  const onSubmit = async (data) => {
+    console.log(data);
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    setIsSubmited(true);
+  };
+
   return (
     <section className="contact-section">
       <div className="container">
         <div className="contact-content">
-
           {/* =========================
               CONTACT INFORMATION
           ========================= */}
@@ -29,9 +48,7 @@ const ContactSection = () => {
 
                 <div>
                   <span>Phone</span>
-                  <a href="tel:+910000000000">
-                    +91 00000 00000
-                  </a>
+                  <a href="tel:+910000000000">+91 00000 00000</a>
                 </div>
               </div>
 
@@ -42,9 +59,7 @@ const ContactSection = () => {
 
                 <div>
                   <span>Email</span>
-                  <a href="mailto:info@shipnshift.com">
-                    info@shipnshift.com
-                  </a>
+                  <a href="mailto:info@shipnshift.com">info@shipnshift.com</a>
                 </div>
               </div>
 
@@ -70,66 +85,95 @@ const ContactSection = () => {
 
             <h2>Let’s Talk About Your Vehicle</h2>
 
-            <form className="contact-form">
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="name">Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Your name"
-                  />
-                </div>
+            {isSubmited ? (
+              <div className="form-success">
+                <h3>Message Sent Successfully!</h3>
 
-                <div className="form-group">
-                  <label htmlFor="email">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Your email"
-                  />
-                </div>
+                <p>
+                  Thank you for contacting ShipNShift. We'll get back to you
+                  shortly.
+                </p>
               </div>
+            ) : (
+              <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="name">Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      {...register("name")}
+                      placeholder="Your name"
+                    />
+                    {errors.name && (
+                      <span className="form-error">{errors.name.message}</span>
+                    )}
+                  </div>
 
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="phone">Phone</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    placeholder="Your phone number"
-                  />
+                  <div className="form-group">
+                    <label htmlFor="email">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      {...register("email")}
+                      placeholder="Your email"
+                    />
+                    {errors.email && (
+                      <span className="form-error">{errors.email.message}</span>
+                    )}
+                  </div>
+                </div>
+
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="phone">Phone</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      {...register("phone")}
+                      placeholder="Your phone number"
+                    />
+                    {errors.phone && (
+                      <span className="form-error">{errors.phone.message}</span>
+                    )}
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="subject">Subject</label>
+                    <input
+                      type="text"
+                      id="subject"
+                      {...register("subject")}
+                      placeholder="Subject"
+                    />
+                    {errors.subject && (
+                      <span className="form-error">
+                        {errors.subject.message}
+                      </span>
+                    )}
+                  </div>
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="subject">Subject</label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    placeholder="Subject"
+                  <label htmlFor="message">Message</label>
+
+                  <textarea
+                    id="message"
+                    {...register("message")}
+                    rows="5"
+                    placeholder="Tell us how we can help..."
                   />
+                  {errors.message && (
+                    <span className="form-error">{errors.message.message}</span>
+                  )}
                 </div>
-              </div>
 
-              <div className="form-group">
-                <label htmlFor="message">Message</label>
-
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="5"
-                  placeholder="Tell us how we can help..."
-                />
-              </div>
-
-              <button type="submit">Send Message</button>
-            </form>
+                <button type="submit" disabled={isSubmitting}>
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                </button>
+              </form>
+            )}
           </div>
-
         </div>
       </div>
     </section>

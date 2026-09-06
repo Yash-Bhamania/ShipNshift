@@ -33,6 +33,10 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+],
+ {
+    basename: "/ShipNshift",
+  }
+);
 
 export default router;
